@@ -1,0 +1,893 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root {
+    --animate-delay: 1.9s;
+  }
+@font-face {
+    font-family: 'endless-boss-battle';
+    src: url('../fonts/endless-boss-battle.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'retroville-nc';
+    src: url('../fonts/retroville-nc.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-secondary{
+    font-family: 'retroville-nc' !important;
+}
+body{
+    font-family: endless-boss-battle;
+    text-transform: uppercase;
+    overflow-x: hidden;
+}
+.active{
+    color: #fff !important;
+}
+.nav-link.active img,
+.nav-link:hover img {
+    opacity: 1;
+}
+.logo{
+    margin-top: 150px;
+}
+.hero-logo{
+    max-width: 100%;
+}
+.hero-animations{
+    max-width: 90%;
+    width: 600px;
+    height: 700px
+}
+.animation21{
+    bottom: 22%;
+    left: 10%;
+    width: 370px;
+    z-index: 0;
+}
+.animationALPHA{
+    right: 0;
+    width: 200px;
+    top: 38%;
+    z-index: 1;
+}
+.animationKEK{
+    width: 280px;
+    left: 0;
+    top: 21%;
+    transform: scaleX(-1);
+}
+.animationDoggo{
+    width: 150px;
+    bottom: 24%;
+    transform: rotate(349deg);
+    z-index: 2;
+    left: 0;
+}
+.rekt-button {
+    font-size: 20px;
+    font-weight: 100;
+    padding: 20px 60px;
+    position: relative;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-family: retroville-nc;
+    transition: 0.5s;
+}
+
+
+
+/* main btn  */
+.btn-main{
+    color: #AB14F7;
+    background-color: black;
+    border: solid 3.5px #AB14F7; 
+}
+
+.btn-main:hover {
+    background-color: #AB14F7;
+    color: #fff;
+    border: solid 3.5px #fff; 
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.btn-main:hover::before{
+    border-bottom: solid 3.5px #fff;
+    border-right: solid 3.5px #fff;
+    transition: 0.5s;
+}
+.btn-main:hover::after{
+    border-top: solid 3.5px #fff;
+    border-left: solid 3.5px #fff;
+    transition: 0.5s;
+}
+
+.btn-main::before {
+    content: '';
+    position: absolute;
+    background: #000;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #000;
+    border-left: solid 4px #000;
+    border-bottom: solid 3.5px #AB14F7;
+    border-right: solid 3.5px #AB14F7;
+    top: -4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.btn-main::after {
+    content: '';
+    position: absolute;
+    background: #000;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #000;
+    border-right: solid 4px #000;
+    border-top: solid 3.5px #AB14F7;
+    border-left: solid 3.5px #AB14F7;
+    bottom: -4.5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* fud btn  */
+.btn-fud{
+    color: #5CE242;
+    background-color: #0E1717;
+    border: solid 3.5px #5CE242; 
+}
+
+.btn-fud:hover {
+    background-color: #5CE242;
+    color: #0E1717;
+    border: solid 3.5px #0E1717; 
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.btn-fud:hover::before{
+    border-bottom: solid 3.5px #0E1717;
+    border-right: solid 3.5px #0E1717;
+    transition: 0.5s;
+}
+.btn-fud:hover::after{
+    border-top: solid 3.5px #0E1717;
+    border-left: solid 3.5px #0E1717;
+    transition: 0.5s;
+}
+
+.btn-fud::before {
+    content: '';
+    position: absolute;
+    background: #0E1717;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #0E1717;
+    border-left: solid 4px #0E1717;
+    border-bottom: solid 3.5px #5CE242;
+    border-right: solid 3.5px #5CE242;
+    top: -4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.btn-fud::after {
+    content: '';
+    position: absolute;
+    background: #0E1717;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #0E1717;
+    border-right: solid 4px #0E1717;
+    border-top: solid 3.5px #5CE242;
+    border-left: solid 3.5px #5CE242;
+    bottom: -4.5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+/* fomo btn  */
+.btn-fomo{
+    color: #F9A31B;
+    background-color: #161117;
+    border: solid 3.5px #F9A31B; 
+}
+
+.btn-fomo:hover {
+    background-color: #F9A31B;
+    color: #161117;
+    border: solid 3.5px #161117; 
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.btn-fomo:hover::before{
+    border-bottom: solid 3.5px #161117;
+    border-right: solid 3.5px #161117;
+    transition: 0.5s;
+}
+.btn-fomo:hover::after{
+    border-top: solid 3.5px #161117;
+    border-left: solid 3.5px #161117;
+    transition: 0.5s;
+}
+
+.btn-fomo::before {
+    content: '';
+    position: absolute;
+    background: #161117;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #161117;
+    border-left: solid 4px #161117;
+    border-bottom: solid 3.5px #F9A31B;
+    border-right: solid 3.5px #F9A31B;
+    top: -4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.btn-fomo::after {
+    content: '';
+    position: absolute;
+    background: #161117;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #161117;
+    border-right: solid 4px #161117;
+    border-top: solid 3.5px #F9A31B;
+    border-left: solid 3.5px #F9A31B;
+    bottom: -4.5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* alpha btn  */
+.btn-alpha{
+    color: #85FFF0;
+    background-color: #052745;
+    border: solid 3.5px #85FFF0; 
+}
+
+.btn-alpha:hover {
+    background-color: #85FFF0;
+    color: #052745;
+    border: solid 3.5px #052745; 
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.btn-alpha:hover::before{
+    border-bottom: solid 3.5px #052745;
+    border-right: solid 3.5px #052745;
+    transition: 0.5s;
+}
+.btn-alpha:hover::after{
+    border-top: solid 3.5px #052745;
+    border-left: solid 3.5px #052745;
+    transition: 0.5s;
+}
+
+.btn-alpha::before {
+    content: '';
+    position: absolute;
+    background: #052745;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #052745;
+    border-left: solid 4px #052745;
+    border-bottom: solid 3.5px #85FFF0;
+    border-right: solid 3.5px #85FFF0;
+    top: -4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.btn-alpha::after {
+    content: '';
+    position: absolute;
+    background: #052745;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #052745;
+    border-right: solid 4px #052745;
+    border-top: solid 3.5px #85FFF0;
+    border-left: solid 3.5px #85FFF0;
+    bottom: -4.5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+/* kek btn  */
+.btn-kek{
+    color: #AB14F7;
+    background-color: #09090C;
+    border: solid 3.5px #AB14F7; 
+}
+
+.btn-kek:hover {
+    background-color: #AB14F7;
+    color: #09090C;
+    border: solid 3.5px #09090C; 
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.btn-kek:hover::before{
+    border-bottom: solid 3.5px #09090C;
+    border-right: solid 3.5px #09090C;
+    transition: 0.5s;
+}
+.btn-kek:hover::after{
+    border-top: solid 3.5px #09090C;
+    border-left: solid 3.5px #09090C;
+    transition: 0.5s;
+}
+
+.btn-kek::before {
+    content: '';
+    position: absolute;
+    background: #09090C;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #09090C;
+    border-left: solid 4px #09090C;
+    border-bottom: solid 3.5px #AB14F7;
+    border-right: solid 3.5px #AB14F7;
+    top: -4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.btn-kek::after {
+    content: '';
+    position: absolute;
+    background: #09090C;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #09090C;
+    border-right: solid 4px #09090C;
+    border-top: solid 3.5px #AB14F7;
+    border-left: solid 3.5px #AB14F7;
+    bottom: -4.5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+/* TERMS btn  */
+.btn-terms{
+    color: #0000FF;
+    background-color: #0000;
+    border: solid 3.5px #0000FF; 
+}
+
+
+.btn-terms:hover::before{
+    border-bottom: solid 3.5px #0000;
+    border-right: solid 3.5px #0000;
+    transition: 0.5s;
+}
+.btn-terms:hover::after{
+    border-top: solid 3.5px #0000;
+    border-left: solid 3.5px #0000;
+    transition: 0.5s;
+}
+
+.btn-terms::before {
+    content: '';
+    position: absolute;
+    background: #0000;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #0000;
+    border-left: solid 4px #0000;
+    border-bottom: solid 3.5px #0000FF;
+    border-right: solid 3.5px #0000FF;
+    top: -4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.btn-terms::after {
+    content: '';
+    position: absolute;
+    background: #0000;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #0000;
+    border-right: solid 4px #0000;
+    border-top: solid 3.5px #0000FF;
+    border-left: solid 3.5px #0000FF;
+    bottom: -4.5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+/* BASE btn  */
+.btn-base{
+    color: #0000FF;
+    background-color: #10102C;
+    border: solid 3.5px #0000FF; 
+}
+
+.btn-base:hover {
+    background-color: #0000FF;
+    color: #10102C;
+    border: solid 3.5px #10102C; 
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.btn-base:hover::before{
+    border-bottom: solid 3.5px #10102C;
+    border-right: solid 3.5px #10102C;
+    transition: 0.5s;
+}
+.btn-base:hover::after{
+    border-top: solid 3.5px #10102C;
+    border-left: solid 3.5px #10102C;
+    transition: 0.5s;
+}
+
+.btn-base::before {
+    content: '';
+    position: absolute;
+    background: #10102C;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #10102C;
+    border-left: solid 4px #10102C;
+    border-bottom: solid 3.5px #0000FF;
+    border-right: solid 3.5px #0000FF;
+    top: -4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.btn-base::after {
+    content: '';
+    position: absolute;
+    background: #10102C;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #10102C;
+    border-right: solid 4px #10102C;
+    border-top: solid 3.5px #0000FF;
+    border-left: solid 3.5px #0000FF;
+    bottom: -4.5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+.section-title{
+    transform: skew(3deg, -10deg) rotateY(20deg);
+}
+.section-title h1, .section-title h2{
+    line-height: 120px
+}
+.section-title span{
+    line-height: 15px;
+    margin-right: 15px;
+}
+.section-background-image{
+    position: absolute;
+    top: 0;
+    /* right: -50px; */
+    overflow: hidden;
+    z-index: 0;
+    height: 100%;
+}
+.section-7 .lower-section, .section-8 .lower-section, .section-9 .lower-section, .section-10 .lower-section, .section-11 .lower-section{
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+.section-7 .lower-section{
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+.fud{
+    bottom: 17%;
+    left: 29%;
+    max-width: 100%;
+}
+.fud-bg{
+    top: 0;
+    left: -1px;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    height: 100%;
+}
+
+.fomo{
+    bottom: 17%;
+    left: 19%;
+    max-width: 100%;
+}
+
+.fomo-bg{
+    top: 0;
+    left: -1px;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    height: 100%;
+}
+
+.alpha{
+    bottom: 17%;
+    left: 19%;
+    max-width: 100%;
+}
+
+.alpha-bg{
+    top: 0;
+    left: -1px;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    height: 100%;
+}
+.kek{
+    bottom: 35%;
+    left: 19%;
+    max-width: 100%;
+}
+
+.kek-bg{
+    top: 0;
+    left: -1px;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    height: 100%;
+}
+
+.base{
+    bottom: 14%;
+    left: 29%;
+    max-width: 100%;
+    width: 700px;
+}
+
+.base-bg{
+    top: 0;
+    left: -1px;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    height: 100%;
+}
+
+.c-31a, .c-30a, .c-30b, .c-21a{
+    width: 280px;
+    max-width: 80%
+}
+.c-licky{
+    width: 400px;
+    top: 0%;
+    transform: scaleX(-1);
+}
+.c-21{
+    width: 380px;
+    max-width: 80%
+}
+.game-portal{
+    position: absolute !important;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+}
+.c-gotchi{
+    position: absolute !important;
+    bottom: 2%;
+    right: 15%;
+    transform: scaleX(-1);
+    width: 210px;
+}
+@media screen and (min-width: 880px) {
+.c-31a{
+    margin-top: -80px;
+}
+.bug{
+    margin-top: 25%;
+}
+}
+@media screen and (max-width: 880px) {
+    .c-31a{
+        width: 200px;
+        position: absolute;
+        top: 18%;
+        right: 3%;    
+    }
+    .c-21{
+        left: 12%;
+        width: 270px;
+    }
+    .c-licky{
+        left: 12% !important;
+        width: 270px;
+        top: 0;
+    }
+    #mobile-menu-button{
+        z-index: 50;
+    }
+    .leaderboard-table td,
+.leaderboard-table th {
+    font-size: 0.9rem;
+}
+    .leaderboard-character-1 img{
+        width: 200px !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+    .leaderboard-character-2 img{
+        left: 27% !important;
+    width: 200px !important;
+    top: 5% !important;
+}
+.leaderboard-character-3 img{
+    left: 63% !important;
+    width: 150px !important;
+}
+    .leaderboard-table::before, .leaderboard-table::after{
+        display: none;
+    }
+    .leaderboard-table {
+        overflow-x: scroll;
+        max-width: 100%;
+    }
+    .min-h-screen{
+        min-height: 70vh !important;
+    }
+    .alpha{
+        left: 0;
+    }
+    .fomo{
+        left: 0;
+    }
+    .base{
+        left: 0;
+    }
+    .fud{
+        left: 0;
+    }
+    .kek{
+        left: 0;
+    }
+    .section-title{
+        transform: skew(3deg, -10deg) rotateY(20deg);
+    }
+    .section-title h1, .section-title h2{
+        line-height: 70px
+    }
+    .section-background-image{
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: auto;
+    }
+    .animationALPHA{
+        top: 58%;
+        width: 120px;
+    }
+    .animationDoggo{
+        bottom: 18%;
+        left: 5%;
+        z-index: 3;
+        width: 100px;
+    }
+    .animation21 {
+        bottom: 16%;
+        left: 14%;
+        width: 240px;
+        z-index: 1;
+    }
+    .animationKEK{
+        top: 46%;
+        width: 200px;
+    }
+    .c-gotchi{
+        bottom: 0;
+        right: 20%;
+        width: 130px;  
+    }
+    .game-portal{
+        left: 0;
+        width: 200px;
+        transform: translateX(0);
+    }
+    .upper-section div{
+        text-align: center;
+    justify-items: center;
+    align-items: center;
+    }
+
+}
+
+.leaderboard-table {
+    color: #AB14F7;
+    background-color: black;
+    border: solid 3.5px #AB14F7;
+    position: relative;
+    width: 100%;
+}
+
+.leaderboard-table::before {
+    content: '';
+    position: absolute;
+    background: #000;
+    padding: 5px;
+    left: -3.5px;
+    border-top: solid 4px #000;
+    border-left: solid 4px #000;
+    border-bottom: solid 3.5px #AB14F7;
+    border-right: solid 3.5px #AB14F7;
+    top: -4px;
+    pointer-events: none;
+}
+
+.leaderboard-table::after {
+    content: '';
+    position: absolute;
+    background: #000;
+    padding: 5px;
+    right: -4.5px;
+    border-bottom: solid 4px #000;
+    border-right: solid 4px #000;
+    border-top: solid 3.5px #AB14F7;
+    border-left: solid 3.5px #AB14F7;
+    bottom: -4.5px;
+    pointer-events: none;
+}
+
+/* Table row styles */
+.leaderboard-table tr {
+    border-bottom: 1px solid #AB14F7;
+}
+
+.leaderboard-table tr:last-child {
+    border-bottom: none;
+}
+
+/* Table cell styles */
+.leaderboard-table td,
+.leaderboard-table th {
+    padding: 15px 30px;
+    border-bottom: 1px solid #AB14F7;
+    text-align: left;
+}
+
+.leaderboard-table th {
+    font-size: 1.2em;
+    border-bottom: 2px solid #AB14F7;
+}
+
+/* Remove border from last row */
+.leaderboard-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.leaderboard-table tbody tr:hover {
+    background-color: rgba(171, 20, 247, 0.1);
+}
+.leaderboard-title img{
+    position: absolute;
+    width: 600px;
+    max-width: 90%;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.leaderboard-character-3 img{
+    position: absolute;
+    left: 61%;
+    top: 22%;
+    z-index: 2;
+    width: 223px;
+    transform: scaleX(-1);
+}
+.leaderboard-character-2 img{
+    position: absolute;
+    top: 0;
+    left: 42%;
+}
+.leaderboard-character-1 img{
+    position: absolute;
+    top: 6%;
+    left: 21%;
+    width: 300px;
+    transform: scaleX(-1);
+}
+.mashroom, .rexx, .bug2, .spaceship, .mwm{
+    width: 300px;
+    height: fit-content;
+}
+.slime, .fireeye{
+    width: 200px;
+    height: fit-content;
+}
+.eyeball, .egghead, .bug{
+    width: 150px;
+    height: fit-content;
+}
+
+.slider-container {
+    width: 100%;
+    position: relative;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    touch-action: pan-y pinch-zoom;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #333;
+    border: 2px solid #AB14F7;
+    transition: background-color 0.3s ease;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.dot.active {
+    background-color: #AB14F7;
+}
+
+.dot:focus {
+    outline: none;
+}
+
+.rekt-button-border {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(to right, #000000, #000000);
+    background-clip: padding-box;
+}
+.rekt-button-border div{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.rekt-button-border::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(to right, #000000, #000000);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #2D2D2D;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #AB14F7;
+    border-radius: 4px;
+}
