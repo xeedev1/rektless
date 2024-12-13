@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECKTLESS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: '#AB14F7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-purple shadow-md absolute w-full z-10">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-36">
+                <!-- Logo -->
+                <div class="logo flex-shrink-0 w-[150px]">
+                    <a href="#" class="text-xl font-bold text-gray-800">
+                        <img src="./assets/img/logo.png" alt="logo">
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 hover:text-white focus:outline-none">
+                        <svg class="h-8 w-8" id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg class="h-8 w-8 hidden" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Links (desktop view) -->
+                <div class="hidden lg:flex lg:space-x-4 space-y-4 lg:space-y-0 flex-col lg:flex-row lg:items-center w-full lg:w-auto">
+                    <a href="#" class="relative text-gray-800 hover:text-white font-medium pr-8 py-2 rounded-md text-3xl flex items-center group nav-link active">
+                        <img src="./assets/img/navbar-active-icon.png" alt="Icon 1" class="absolute left-0 transform -translate-x-8 opacity-0 transition-all duration-200 ease-in-out" />
+                        <span class="group-hover:pl-8 duration-200 ease-in-out">The Game</span>
+                    </a>
+                    <a href="#leaderboard" class="relative text-gray-800 hover:text-white font-medium pr-8 py-2 rounded-md text-3xl flex items-center group nav-link">
+                        <img src="./assets/img/navbar-active-icon.png" alt="Icon 5" class="absolute left-0 transform -translate-x-8 opacity-0 transition-all duration-200 ease-in-out" />
+                        <span class="group-hover:pl-8 duration-200 ease-in-out">Leaderboard</span>
+                    </a>
+                    <a href="#" class="relative text-gray-800 hover:text-white font-medium pr-8 py-2 rounded-md text-3xl flex items-center group nav-link">
+                        <img src="./assets/img/navbar-active-icon.png" alt="Icon 4" class="absolute left-0 transform -translate-x-8 opacity-0 transition-all duration-200 ease-in-out" />
+                        <span class="group-hover:pl-8 duration-200 ease-in-out">About</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-purple text-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+            <div class="flex items-center justify-between h-36 px-4 sm:px-6 lg:px-8">
+                <div class="logo flex-shrink-0 w-[200px]">
+                    <a href="#" class="text-xl font-bold text-white">
+                        <img src="./assets/img/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div>
+                    <button id="mobile-menu-close-button" class="text-white focus:outline-none">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-col space-y-4 px-4 sm:px-6 lg:px-8 mt-[200px]">
+                <a href="#" class="text-white font-medium py-2 text-3xl">The Game</a>
+                <!-- <a href="#" class="text-white font-medium py-2 text-3xl">Lore</a> -->
+                <a href="#leaderboard" class="text-white font-medium py-2 text-3xl">Leaderboard</a>
+                <a href="#" class="text-white font-medium py-2 text-3xl">About</a>
+                <!-- <a href="#" class="text-white font-medium py-2 text-3xl">Connect</a> -->
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- section 1 -->
+    <section class="bg-black text-white py-12 flex flex-col items-center justify-center">
+        <!-- gif here -->
+         <div class="hero-animations relative">
+            <img class="animation21 absolute z-[1]" src="./assets/img/gif/21.gif" alt="21">
+            <img class="animationKEK absolute" src="./assets/img/gif/KEK.gif" alt="KEK">
+            <img class="animationALPHA absolute" src="./assets/img/gif/ALPHA.gif" alt="ALPHA">
+            <img class="animationDoggo absolute z-[3]" src="./assets/img/gif/Doggo.gif" alt="Doggo">
+            <img src="./assets/img/hero-logo.png" alt="Centered Image" class="mb-12 z-[2] absolute bottom-0 hero-logo animate__animated to-move-up" />
+         </div>
+
+        <!-- Button -->
+        <a href="#" class="rekt-button btn-main animate__animated to-move-up mt-[30px] md:mt-[-30px]">
+            Play
+        </a>
+    </section>
+
+
+    <!-- section 2 -->
+    <section class="section-2 bg-purple text-white py-12 px-4 sm:px-6 lg:px-16 mx-auto max-w-8xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="flex-none p-4">
+                <div class="section-title">
+                    <h1 class="text-5xl lg:text-9xl">Side</h1>
+                    <h2 class="text-4xl lg:text-8xl">Scrolling</h2>
+                    <h1 class="text-5xl lg:text-9xl">Crypto</h1>
+                    <h1 class="text-5xl lg:text-9xl">Game</h1>
+                </div>
+
+                <!-- gif here  -->
+                <img src="./assets/img/gif/31a.gif" alt="31a" class="float-right c-31a animate__animated to-move-left" />
+            </div>
+            <div class="p-4">
+                <div class="video-container relative">
+                    <!-- Thumbnail image that will fade out -->
+                    <img class="section-background-image absolute w-full h-full object-cover transition-opacity duration-500" 
+                         src="./assets/img/section-2-bg-a.png" 
+                         alt="section 2 background Image">
+                    
+                    <!-- Video that will fade in -->
+                    <video class="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+                           id="trailer-video"
+                           src="./assets/trailer.mp4"
+                           autoplay
+                           muted
+                           loop
+                           playsinline>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- section 3 -->
+     <section class="min-h-[70vh] section-3 bg-black text-white py-12 px-4 sm:px-6 lg:px-16 mx-auto max-w-8xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="flex-none p-4">
+                <div class="section-title">
+                    <h1 class="text-5xl lg:text-9xl">1:1</h1>
+                    <h1 class="text-5xl lg:text-9xl normal-case">AAVEGOTCHiS</h1>
+                    <div class="flex">
+                        <span class="text-3xl">And</span>
+                        <h1 class="text-5xl lg:text-9xl">Wearables</h1>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-4">
+                <!-- gif here  -->
+                <img src="./assets/img/gif/21.gif" alt="21" class="c-21 float-right absolute z-10 bottom-32 right-32 animate__animated to-move-left" />
+                <img class="section-background-image" src="./assets/img/section-2-bg-a.png" alt="section 2 background Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- section 4 -->
+    <section class="section-4 bg-purple text-white py-12 px-4 sm:px-6 lg:px-16 mx-auto max-w-8xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="flex-none p-4">
+                <div class="section-title">
+                    <h1 class="text-5xl lg:text-9xl">Unlock</h1>
+                    <h1 class="text-5xl lg:text-9xl">Characters</h1>
+                    <div class="flex">
+                        <span class="text-3xl">And</span>
+                        <h1 class="text-5xl lg:text-9xl">Moar</h1>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-4">
+                <img class="section-background-image" src="./assets/img/section-2-bg-a.png" alt="section 2 background Image">
+            </div>
+        </div>
+        <div class="grid-or-slider">
+            <!-- Desktop Grid -->
+            <div class="hidden lg:grid lg:grid-cols-3 gap-4">
+                <div class="text-center">
+                    <img src="./assets/img/gif/30a.gif" alt="30a" class="float-right z-10 relative c-30a animate__animated to-move-up" />
+                </div>
+                <div class="text-center">
+                    <img src="./assets/img/gif/30b.gif" alt="30b" class="mx-auto z-10 relative c-30b animate__animated to-move-up" />
+                </div>
+                <div class="text-center">
+                    <img src="./assets/img/gif/21a.gif" alt="21a" class="float-left z-10 relative c-21a animate__animated to-move-up" />
+                </div>
+            </div>
+
+            <!-- Mobile Slider -->
+            <div class="lg:hidden mobile-slider relative">
+                <div class="slider-container overflow-hidden">
+                    <div class="slider-wrapper flex transition-transform duration-300">
+                        <div class="slide w-full flex-shrink-0 text-center">
+                            <img src="./assets/img/gif/30a.gif" alt="30a" class="mx-auto z-10 relative c-30a animate__animated to-move-up" />
+                        </div>
+                        <div class="slide w-full flex-shrink-0 text-center">
+                            <img src="./assets/img/gif/30b.gif" alt="30b" class="mx-auto z-10 relative c-30b animate__animated to-move-up" />
+                        </div>
+                        <div class="slide w-full flex-shrink-0 text-center">
+                            <img src="./assets/img/gif/21a.gif" alt="21a" class="mx-auto z-10 relative c-21a animate__animated to-move-up" />
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-dots flex justify-center mt-4 gap-2">
+                    <button class="dot w-3 h-3 rounded-full bg-gray-400" data-index="0"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-gray-400" data-index="1"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-gray-400" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- section 5 -->
+     <section class="section-5 bg-black text-white py-12 px-4 sm:px-6 lg:px-16 mx-auto min-h-[70vh] max-w-8xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="flex-none p-4 mt-32">
+                <div class="section-title">
+                    <h1 class="text-5xl lg:text-9xl">Rekt</h1>
+                    <h2 class="text-5xl lg:text-9xl">Lickquidator</h2>
+                    <div class="flex">
+                        <span class="text-3xl">And</span>
+                    <h1 class="text-5xl lg:text-9xl">Bosses</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4">
+                
+                <!-- gif here  -->
+                <img class="w-100 z-10 relative left-[30%] c-licky" src="./assets/img/gif/licky.gif" alt="licky" >
+                <img class="section-background-image" src="./assets/img/section-2-bg-a.png" alt="section 2 background Image">
+            </div>
+        </div>
+    </section>
+
+     <!-- section 6 -->
+     <section class="section-6 min-h-screen bg-[#0000FF] text-white py-12 px-4 sm:px-6 lg:px-16 mx-auto max-w-8xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="flex-none p-4">
+                <div class="section-title md:w-[150%]">
+                    <h1 class="text-4xl m-0">Enter To</h1>
+                    <h2 class="text-5xl lg:text-9xl !mt-[-20px]">PLAY AND</h2>
+                    <h2 class="text-5xl lg:text-9xl !mt-[-20px]">GET BASED!</h2>
+                </div>
+            </div>
+            <div class="p-4">
+                
+                <!-- gif here  -->
+                <img class="section-background-image" src="./assets/img/section-2-bg-a.png" alt="section 2 background Image">
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <!-- gifs here  -->
+             <div></div>
+             <div class="text-center">
+                <img src="./assets/img/gif/REKTLESS_PORTAL.gif" alt="portal" class="mx-auto z-10 relative game-portal" />
+             </div>
+
+             <div class="text-center">
+                <img src="./assets/img/gif/REKTLESS_GOTCHi.gif" alt="gif" class="mx-auto z-10 relative c-gotchi" />
+             </div>
+        </div>
+    </section>
+
+    <!-- section 7 -->
+     <!-- <section class="section-7 bg-[#0E1717] text-white pt-12">
+        <div class="upper-section px-4 sm:px-6 lg:px-16 mx-auto max-w-8xl grid grids-col-1 lg:grid-cols-2 gap-4">
+            <div class="flex flex-col lg:flex-row md:justify-between">
+                <div class="section-title">
+                    <h1 class="text-8xl lg:text-[200px] mt-12 md:mt-32 text-[#5CE242]">FUD</h1>
+                </div>
+             <img class="slime" src="./assets/img/gif/slime.gif" alt="slime" class="float-right">
+            </div>
+            <div class="items-center">
+                <div class="flex flex-col lg:flex-row md:justify-between">
+                    <div class="">
+                        <h1 class="text-xl lg:mt-32 text-[#5CE242] font-secondary hidden">Here some tldr text of this stage game-play</h1>
+                        <button class="rekt-button btn-fud float-right mt-12">Play</button>
+                    </div>
+                 <img class="mashroom" src="./assets/img/gif/mushroom.gif" alt="mushroom" class="float-right">
+                </div>
+            </div>
+        </div>
+        <div class="lower-section relative">
+            <img src="./assets/img/fud-bg.png" alt="fug bg" class="w-100 absolute z-0 fud-bg">
+             <img src="./assets/img/gif/FUD.gif" alt="fud" class="absolute z-10 fud">
+        </div>
+     </section> -->
+
+      <!-- section 8 -->
+      <!-- <section class="section-8 bg-[#161117] text-white pt-12">
+        <div class="upper-section px-4 sm:px-6 lg:px-16 mx-auto mt-12 max-w-8xl grid grids-col-1 lg:grid-cols-2 gap-4">
+            <div class="flex flex-col lg:flex-row md:justify-between ">
+                <div class="section-title">
+                    <h1 class="text-8xl lg:text-[200px] mt-12 md:mt-32 text-[#F9A31B]">FOMO</h1>
+                </div>
+             <img class="fireeye" src="./assets/img/gif/Eye.gif" alt="eye" class="float-left lg:-ml-32">
+            </div>
+            <div class="items-center">
+                <div class="flex flex-col lg:flex-row md:justify-between">
+                    <div class="">
+                        <h1 class="text-xl lg:mt-32 text-[#F9A31B] font-secondary hidden">Here some tldr text of this stage game-play</h1>
+                        <button class="rekt-button btn-fomo float-right mt-12">Play</button>
+                    </div>
+                 <img class="rexx" src="./assets/img/gif/Rexx.gif" alt="Rexx" class="float-right max-w-[300px] h-auto">
+                </div>
+            </div>
+        </div>
+        <div class="lower-section relative">
+            <img src="./assets/img/fomo-bg.png" alt="fomo bg" class="w-100 absolute z-0 fomo-bg">
+             <img src="./assets/img/gif/FOMO.gif" alt="fomo" class="absolute z-10 fomo">
+        </div>
+     </section> -->
+
+
+      <!-- section 9 -->
+      <!-- <section class="section-9 bg-[#052745] text-white pt-12">
+        <div class="upper-section px-4 sm:px-6 lg:px-16 mx-auto mt-12 max-w-8xl grid grids-col-1 lg:grid-cols-2 gap-4">
+            <div class="flex flex-col lg:flex-row md:justify-between">
+                <div class="section-title">
+                    <h1 class="text-8xl lg:text-[200px] mt-12 text-[#85FFF0]">ALPHA</h1>
+                </div>
+             <img class="bug" src="./assets/img/gif/Bug.gif" alt="bug" class="float-left lg:-ml-36 w-[200px] h-[150px] mt-24">
+            </div>
+            <div class="items-center">
+                <div class="flex flex-col lg:flex-row md:justify-between">
+                    <div class="">
+                        <h1 class="text-xl lg:mt-32 text-[#85FFF0] font-secondary hidden">Here some tldr text of this stage game-play</h1>
+                        <button class="rekt-button btn-alpha float-right my-12 ">Play</button>
+                    </div>
+                 <img class="bug2" src="./assets/img/gif/Crystal.gif" alt="Rocket" class="float-right max-w-[300px] h-[250px]">
+                </div>
+            </div>
+        </div>
+        <div class="lower-section relative">
+            <img src="./assets/img/alpha-bg.png" alt="alpha bg" class="w-100 absolute z-0 alpha-bg">
+             <img src="./assets/img/gif/ALPHA.gif" alt="alpha" class="absolute z-10 alpha">
+        </div>
+     </section> -->
+
+     <!-- section 10 -->
+     <!-- <section class="section-10 bg-[#09090C] text-white pt-12">
+        <div class="upper-section px-4 sm:px-6 lg:px-16 mx-auto mt-12 max-w-8xl grid grids-col-1 lg:grid-cols-2 gap-4">
+            <div class="flex flex-col lg:flex-row md:justify-between">
+                <div class="section-title">
+                    <h1 class="text-8xl lg:text-[200px] mt-12 text-[#AB14F7]">KEK</h1>
+                </div>
+             <img class="eyeball" src="./assets/img/gif/cyclops.gif" alt="cyclops" class="float-left w-[200px] h-[200px] lg:-mt-12">
+            </div>
+            <div class="items-center">
+                <div class="flex flex-col lg:flex-row md:justify-between">
+                    <div class="">
+                        <h1 class="text-xl lg:mt-32 text-[#AB14F7] font-secondary hidden">Here some tldr text of this stage game-play</h1>
+                        <button class="rekt-button btn-kek float-right my-12 ">Play</button>
+                    </div>
+                 <img class="spaceship" src="./assets/img/gif/multieye.gif" alt="multieye" class="float-right max-w-[300px] h-auto">
+                </div>
+            </div>
+        </div>
+        <div class="lower-section relative">
+            <img src="./assets/img/kek-bg.png" alt="kek bg" class="w-100 absolute z-0 kek-bg">
+             <img src="./assets/img/gif/KEK.gif" alt="kek" class="absolute z-10 kek">
+        </div>
+     </section> -->
+
+      <!-- section 11 -->
+      <section class="section-11 bg-[#10102C] text-white py-12">
+        <div class="upper-section px-4 sm:px-6 lg:px-16 mx-auto mt-12 max-w-8xl grid grids-col-1 lg:grid-cols-2 gap-4">
+            <div class="flex flex-col lg:flex-row md:justify-between">
+                <div class="section-title">
+                    <h1 class="text-8xl lg:text-[200px] mt-12 md:mt-36 text-[#0000FF]">BASE</h1>
+                </div>
+             <img class="egghead" src="./assets/img/gif/Egghead.gif" alt="Egghead" class="float-left w-[250px] h-[250px] mt-12">
+            </div>
+            <div class="items-center">
+                <div class="flex flex-col lg:flex-row md:justify-between">
+                    <div class="">
+                        <h1 class="text-xl lg:mt-32 text-[#0000FF] font-secondary hidden">Here some tldr text of this stage game-play</h1>
+                        <button class="rekt-button btn-base float-right my-12 ">Play</button>
+                    </div>
+                 <img class="mwm" src="./assets/img/gif/rocket.gif" alt="rocket" class="float-right max-w-[300px] h-[250px]">
+                </div>
+            </div>
+        </div>
+        <div class="lower-section relative">
+            <img src="./assets/img/base-bg.webp" alt="base bg" class="w-100 absolute z-0 base-bg">
+             <img src="./assets/img/gif/BlueMech.gif" alt="base" class="absolute z-10 base">
+        </div>
+     </section>
+
+     <!-- section 12  -->
+    <section id="leaderboard" class="section-12 relative font-secondary bg-black text-white py-12 px-4 sm:px-6 lg:px-16 mx-auto max-w-8xl relative">
+        
+        
+            <div class="leaderboard-title">
+                <img src="./assets/img/leaderboard-title.png" alt="leaderboard title">
+            </div>
+            <div class="leaderboard-character-1">
+                <img src="./assets/img/gif/kek.gif" alt="kek">
+            </div>
+            <div class="leaderboard-character-2">
+                <img src="./assets/img/gif/21.gif" alt="21">
+            </div>
+            <div class="leaderboard-character-3">
+                <img src="./assets/img/gif/Doggo.gif" alt="Doggo">
+            </div>
+        <div class="leaderboard-table max-w-[80%] mx-auto mt-[260px] md:mt-[400px]">
+            <table class="w-full text-left">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2"></th>
+                        <th class="px-4 py-2 text-white">PLAYER</th>
+                        <th class="px-4 py-2 text-white">RUNS</th>
+                        <th class="px-4 py-2 text-white">REKT</th>
+                        <th class="px-4 py-2 text-white">SCORE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-t border-gray-700">
+                        <td class="px-4 py-4 text-white text-2xl">#1</td>
+                        <td class="px-4 py-4 text-2xl">GotchiLord</td>
+                        <td class="px-4 py-4 text-2xl">42</td>
+                        <td class="px-4 py-4 text-2xl">156</td>
+                        <td class="px-4 py-4 text-2xl">989,432</td>
+                    </tr>
+                    <tr class="border-t border-gray-700">
+                        <td class="px-4 py-4 text-white text-2xl">#2</td>
+                        <td class="px-4 py-4 text-2xl">RektMaster</td>
+                        <td class="px-4 py-4 text-2xl">38</td>
+                        <td class="px-4 py-4 text-2xl">142</td>
+                        <td class="px-4 py-4 text-2xl">875,621</td>
+                    </tr>
+                    <tr class="border-t border-gray-700">
+                        <td class="px-4 py-4 text-white text-2xl">#3</td>
+                        <td class="px-4 py-4 text-2xl">CryptoRunner</td>
+                        <td class="px-4 py-4 text-2xl">35</td>
+                        <td class="px-4 py-4 text-2xl">128</td>
+                        <td class="px-4 py-4 text-2xl">762,144</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="flex items-center justify-center bg-black">
+        <div>
+            <button id="termsButton" class="rekt-button btn-kek my-12">Terms & Conditions</button>
+        </div>
+    </section>
+
+
+     <footer class="bg-black grid grid-cols-1 py-12 px-6 lg:grid-cols-3 gap-12 items-center">
+        <div class="col">
+            <img class="w-[50%] mx-auto" src="./assets/img/pixelcraft-about.png" alt="pixelcraft about">
+        </div>
+        <div class="col">
+            <img class="mx-auto w-full" src="./assets/img/footer-logo.png" alt="footer logo">
+        </div>
+        <div class="col">
+            <img class="w-[50%] mx-auto" src="./assets/img/aavegotchi.png" alt="aavegotchi">
+        </div>
+     </footer>
+
+    <!-- Modal -->
+    <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="rekt-button-border relative bg-black text-white p-8 max-w-2xl mx-4">
+            <button id="closeModal" class="absolute top-4 right-4 text-white hover:text-gray-300">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <!-- <h2 class="text-3xl mb-4">Terms & Conditions</h2> -->
+            <div class="modal-content max-h-[60vh] overflow-y-auto font-[100] font-secondary">
+                <h1 class="text-2xl">Rektless Terms of Service</h1>
+                <p class="text-sm">v1.2</p>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">1. Introduction</h2>
+                    <p>Welcome to Rektless, a browser-based sidescroller game developed and published by Pixelcraft Studios Pte. Ltd. ("we", "us", "our", “The Company”). By downloading and using Rektless (“Service”), you agree to be bound by these Terms of Service ("Terms").</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">2. User Agreement</h2>
+                    <p>By playing Rektless, you agree to comply with these Terms and affirm that you understand and accept the conditions outlined herein.</p>
+                    <p>By continuing to use Rektless after any modifications to these Terms, you agree to be bound by the updated terms. It is your responsibility to regularly review the Terms for updates or changes. If you do not agree with the modified Terms, you must discontinue your use of the Service.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">3. Eligibility</h2>
+                    <p>To use this Service, you must be at least 16 years old, or have parental consent if under the required age. By using the Service, you confirm that you meet the eligibility requirements.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">4. Account Registration</h2>
+                    <p>To access certain features, you need to connect your cryptocurrency wallet. You are responsible for any activity under your account.</p>
+                    <p>Your wallet information is not to be used for marketing purposes unless explicitly stated otherwise.</p>
+                    <p>We are not responsible for any data or account breaches that occur on third-party platforms you use to register or access the Service.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">5. Purchases and Virtual Items</h2>
+                    <p>The Service may include virtual goods, in-game currency, or other purchases. All purchases are final and non-refundable unless otherwise required by law. We may modify or discontinue virtual items without liability. Such changes may occur without compensation.</p>
+                    <p>In-game items are purchased with the in-game currency known as “Gems”. Gems are non-transferable, offchain scores that enable players to access specific features, upgrades, or other content within the game. These items are digital goods and have no real-world monetary value. In-game items are licensed to users and remain the property of Pixelcraft Studios Pte. Ltd.</p>
+                    <p>NFTs minted while playing Rektless are unique blockchain-based digital assets that players can earn and collect (for example, High Score Cards). Ownership of an NFT grants the user rights as outlined below but does not transfer intellectual property rights in the underlying content. Ownership provides a verifiable record of purchase and access to specific in-game features or assets, but it does not confer copyright, trademark, or other intellectual property rights unless explicitly stated.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">6. Refund Policy</h2>
+                    <p>All purchases made within the Service, including but not limited to virtual goods, in-game currency, and downloadable content, are final and non-refundable. This includes circumstances where your account is suspended or terminated due to a violation of these Terms.</p>
+                    <p>However, refunds may be issued at our sole discretion in accordance with applicable laws, or as required by the platform through which the purchase was made (e.g., Steam, Apple App Store, Google Play Store).</p>
+                    <p>Once an in-game item or key is used to activate and mint an NFT, the transaction is final and non-refundable.</p>
+                    <p>If you believe you are entitled to a refund under specific circumstances, you may contact our support team at <a class="text-[#AB14F7]" href="mailto:service@pixelcraftstudios.io">service@pixelcraftstudios.io</a>, and we will review your request on a case-by-case basis. Please note that refund processing may take up to two weeks depending on your payment method or platform.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">7. Intellectual Property Rights</h2>
+                    <p>All intellectual property rights in Rektless, including but not limited to characters, story, art, and the "Aavegotchi" brand, are owned by Pixelcraft Studios Pte. Ltd. You may not copy, modify, distribute, or create derivative works without express permission.</p>
+                    <p>Unauthorized use of the intellectual property may lead to legal actions.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">8. User Conduct</h2>
+                    <p>Rektless does not condone any form of bullying, hacking, or cheating. Manipulation of the game’s code is strictly prohibited.</p>
+                    <ul>
+                        <li>Violate any applicable laws or regulations.</li>
+                        <li>Use cheats, hacks, bots, or any unauthorized third-party software.</li>
+                        <li>Exploit bugs or glitches in the game.</li>
+                        <li>Engage in harassment, abuse, or hate speech toward other players or Company representatives.</li>
+                        <li>Impersonate another person or entity.</li>
+                    </ul>
+                    <p>We reserve the right to conclude such malicious activity has taken place and close, freeze or otherwise suspend or remove accounts and revoke access to use the Service at our sole discretion.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">9. Privacy Policy</h2>
+                    <p>Your privacy is important to us. Pixelcraft Studios Pte. Ltd. collects and processes personal information in accordance with this Privacy Policy. By using the Service, you agree to the collection, use, and sharing of your information as described in this Privacy Policy.</p>
+                    <p><strong>Information Collection:</strong> We collect information such as your name, email address, and gameplay data to provide and improve our services. This may include account creation, gameplay analytics, and customer support interactions.</p>
+                    <p><strong>Use of Information:</strong> Your personal information will primarily be used to facilitate your access to the Service, improve user experience, and address any issues you may encounter while using the game.</p>
+                    <p><strong>Marketing Communications:</strong> We will only use your personal information for marketing purposes, such as sending promotional offers or game updates, if you have explicitly opted-in to receive such communications. You may opt out at any time by following the instructions provided in the communication or contacting us directly.</p>
+                    <p><strong>Data Protection:</strong> We implement appropriate security measures to protect your personal data from unauthorized access, alteration, or disclosure. However, no system can be entirely secure, and we cannot guarantee absolute security of your information.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">10. Disclaimers</h2>
+                    <p>Rektless is provided "as is" without warranty of any kind, express or implied.</p>
+                    <p>The Company is not responsible for interruptions or loss of data due to server maintenance or other unexpected outages, downtime, or technical issues.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">11. Termination</h2>
+                    <p>The Company reserves the right to suspend or terminate your access to the Service at its discretion, with or without cause, and without prior notice, particularly for violating these terms.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">12. Limitation of Liability</h2>
+                    <p>Pixelcraft Studios Pte. Ltd. shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your access to or use of Rektless.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">13. Governing Law</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of Singapore.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">14. Changes to Terms</h2>
+                    <p>We reserve the right to modify these Terms at any time. Your continued use of Rektless will constitute your acceptance of such changes.</p>
+                </div>
+            
+                <div>
+                    <h2 class="text-xl mb-2 text-[#AB14F7]">15. Contact Information</h2>
+                    <p>For any legal issues or queries related to these Terms, please contact us at <a class="text-[#AB14F7]" href="mailto:service@pixelcraftstudios.io">service@pixelcraftstudios.io</a>.</p>
+                    <address class="text-[#AB14F7] text-sm">
+                        Pixelcraft Studios Pte. Ltd.<br>
+                        60 Paya Lebar Road, #07-54, Paya Lebar Square, Singapore 409051
+                    </address>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            var hamburgerIcon = document.getElementById('hamburger-icon');
+            var closeIcon = document.getElementById('close-icon');
+    
+            mobileMenu.classList.toggle('-translate-x-full');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    
+        document.getElementById('mobile-menu-close-button').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            var hamburgerIcon = document.getElementById('hamburger-icon');
+            var closeIcon = document.getElementById('close-icon');
+    
+            mobileMenu.classList.add('-translate-x-full');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        });
+        
+ // Function to add class when elements are visible after a delay
+function addClassOnVisibility(selector, className, delay = 1000) {
+  const elements = document.querySelectorAll(selector);
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Wait for the specified delay before adding the class
+        setTimeout(() => {
+          entry.target.classList.add(className);
+          // Stop observing the element after adding the class
+          observer.unobserve(entry.target);
+        }, delay);
+      }
+    });
+  });
+
+  // Observe each element that matches the selector
+  elements.forEach(element => observer.observe(element));
+}
+
+// Usage example
+document.addEventListener('DOMContentLoaded', () => {
+  addClassOnVisibility('.to-move-up', 'animate__fadeInUp', 0); // 100ms delay (0.1 second)
+});
+document.addEventListener('DOMContentLoaded', () => {
+  addClassOnVisibility('.to-move-left', 'animate__fadeInRight', 0); // 100ms delay (0.1 second)
+});
+document.addEventListener('DOMContentLoaded', () => {
+  addClassOnVisibility('.to-move-right', 'animate__fadeInLeft', 0); // 100ms delay (0.1 second)
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Function to detect mobile device
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+      || window.innerWidth <= 768;
+  }
+
+  // Function to update button text
+  function updatePlayButtons() {
+    const playButtons = document.querySelectorAll('.rekt-button');
+    playButtons.forEach(button => {
+      if (button.textContent.trim() === 'Play' && isMobileDevice()) {
+        button.textContent = 'Playable on PC';
+      }
+    });
+  }
+
+  // Initial check
+  updatePlayButtons();
+
+  // Update on resize (in case of orientation change)
+  window.addEventListener('resize', updatePlayButtons);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let startX = 0;
+    let currentX = 0;
+
+    // Initialize first dot as active
+    dots[0].classList.add('bg-white');
+
+    // Handle dot clicks
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+    });
+
+    // Touch events for swipe
+    sliderWrapper.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        currentX = startX;
+    });
+
+    sliderWrapper.addEventListener('touchmove', (e) => {
+        currentX = e.touches[0].clientX;
+        const diff = currentX - startX;
+        const offset = -100 * currentSlide + (diff / sliderWrapper.clientWidth) * 100;
+        sliderWrapper.style.transform = `translateX(${offset}%)`;
+    });
+
+    sliderWrapper.addEventListener('touchend', () => {
+        const diff = currentX - startX;
+        if (Math.abs(diff) > 50) { // Minimum swipe distance
+            if (diff > 0 && currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            } else if (diff < 0 && currentSlide < dots.length - 1) {
+                goToSlide(currentSlide + 1);
+            } else {
+                goToSlide(currentSlide);
+            }
+        } else {
+            goToSlide(currentSlide);
+        }
+    });
+
+    function goToSlide(index) {
+        currentSlide = index;
+        sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('bg-white', i === index);
+            dot.classList.toggle('bg-gray-400', i !== index);
+        });
+    }
+});
+     </script>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('trailer-video');
+            const thumbnail = video.previousElementSibling;
+
+            video.addEventListener('loadeddata', () => {
+                // Once video is loaded, fade out thumbnail and fade in video
+                thumbnail.style.opacity = '0';
+                video.style.opacity = '1';
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('termsButton').addEventListener('click', function() {
+            document.getElementById('termsModal').classList.remove('hidden');
+            document.getElementById('termsModal').classList.add('flex');
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('termsModal').classList.add('hidden');
+            document.getElementById('termsModal').classList.remove('flex');
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('termsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+                this.classList.remove('flex');
+            }
+        });
+    </script>
+
+</body>
+</html>
